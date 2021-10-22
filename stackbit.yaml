@@ -1,0 +1,141 @@
+stackbitVersion: ~0.3.0
+ssgName: gatsby
+publishDir: public
+pagesDir: content
+models:
+  content:
+    type: page
+    label: Content
+    match:
+      - imprint/imprint.mdx
+      - index/index.mdx
+      - privacy/privacy.mdx
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: seoTitle
+        label: Seo Title
+      - type: boolean
+        name: useSeoTitleSuffix
+        label: Use Seo Title Suffix
+      - type: boolean
+        name: useSplashScreen
+        label: Use Splash Screen
+  index:
+    type: page
+    label: Index
+    folder: index
+    match:
+      - about/about.mdx
+      - interests/interests.mdx
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: image
+        name: image
+        label: Image
+  contact:
+    type: page
+    label: Contact
+    folder: index/contact
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: name
+        label: Name
+      - type: string
+        name: email
+        label: Email
+      - type: image
+        name: profileImage
+        label: Profile Image
+  hero:
+    type: page
+    label: Hero
+    folder: index/hero
+    match: '*'
+    fields:
+      - type: string
+        name: greetings
+        label: Greetings
+      - type: image
+        name: icon
+        label: Icon
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: subtitlePrefix
+        label: Subtitle Prefix
+      - type: string
+        name: subtitle
+        label: Subtitle
+  project:
+    type: page
+    label: Project
+    folder: index/projects
+    match: '**/*'
+    exclude:
+      - projects.mdx
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: category
+        label: Category
+      - type: string
+        name: emoji
+        label: Emoji
+      - type: image
+        name: screenshot
+        label: Screenshot
+      - type: string
+        name: github
+        label: Github
+      - type: string
+        name: external
+        label: External
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+      - type: boolean
+        name: visible
+        label: Visible
+      - type: number
+        name: position
+        label: Position
+        subtype: int
+  project_1:
+    type: page
+    label: Project 1
+    folder: index/projects
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: boolean
+        name: visible
+        label: Visible
+      - type: number
+        name: position
+        label: Position
+        subtype: int
+      - type: boolean
+        name: buttonVisible
+        label: Button Visible
+      - type: string
+        name: buttonText
+        label: Button Text
+      - type: string
+        name: buttonUrl
+        label: Button Url
